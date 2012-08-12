@@ -19,6 +19,9 @@ function processResult(query) {
 				// Show the similar items
 				var resultList = response["resultList"];
 				$(".loading").css({"display" : "none"});
+				$(".final-result").css({"display" : "none"});
+			    $(".bad").css({"display" : "none"});
+				$(".inter-result").css({"display" : "block"});
 				$(".inter-result").html("")
 				for(result in resultList) {
 					var item = resultList[result];
@@ -50,6 +53,8 @@ function processResult(query) {
 									var resultList2 = response_["resultList"];
 									//alert(resultList2);
 									$(".loading").css({"display" : "none"});
+									$(".inter-result").css({"display" : "none"});
+									$(".final-result").css({"display" : "block"});
 									$(".final-result").html("")
 									for(result2 in resultList2) {
 										var item2 = resultList2[result2];
@@ -79,6 +84,7 @@ function processResult(query) {
 				var resultList3 = response["resultList"];
 				//alert(resultList2);
 				$(".loading").css({"display" : "none"});
+				$(".final-result").css({"display" : "block"});
 				$(".final-result").html("");
 				for(result4 in resultList3) {
 					var item4 = resultList3[result4];
@@ -102,7 +108,11 @@ function processResult(query) {
 		}
 		else {
 			$(".loading").css({"display" : "none"});
-			$(".final-result").html("<div class='bad'> Oops .. No results found :( </div>");
+			$(".bad").css({"display" : "block"});
+			$(".bad").html("Oops .. No results found :(");
+			$(".inter-result").css({"display" : "none"});
+			$(".final-result").css({"display" : "none"});
+			
 			
 		}
 
@@ -116,6 +126,18 @@ function getQueryTerm() {
 
 
 $(document).ready(function() {
+	$('.search-bar').val('');
+	$(".loading").css({"display" : "none"});
+	$('.search-bar').keyup(function(e) {
+	//alert(e.keyCode);
+	if(e.keyCode == 13) {
+		$(".loading").css({"display" : "block"});
+		$(".inter-result").css({"display" : "none"});
+		$(".final-result").css({"display" : "none"});
+		$(".bad").css({"display" : "none"});
+		processResult($('.search-bar').val());
+	}
+});
 
 	// intialize all event handlers
 	// fetch the data from searchbar
@@ -123,7 +145,7 @@ $(document).ready(function() {
 });
 // compute
 console.log("2");
-product = null;
+product = '';
 
 chrome.tabs.getSelected(null, function(tab) {
 	tabURL = tab.url;
@@ -209,7 +231,7 @@ chrome.tabs.getSelected(null, function(tab) {
 		xhr.send();
 
 	} else {
-		product = "none";
+		product = "";
 	}
 
 	console.log("product is : " + product);
