@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<title> namma hack</title>
+		<script src="jquery-1.6.4.min.js"></script>
+		<style type="text/css">
+			#wrapper
+			{
+				width: 300px;
+				height: 400px;
+				/*background-color: #B4C8FF;*/
+			}
+			#search-panel
+			{
+				width: inherit;
+				height: 50px;
+				/*background-color: #3AFFE5;*/
+			}
+			
+			.search-bar
+			{
+				width: inherit;
+			}
+			
+			.inter-staticitem, .final-staticitem
+			{
+				cursor: pointer;
+				font-family: ubutu, sans-serif;
+				font-weight:bolder;
+				margin: 5px;
+				height: 25px;
+				text-align: center;
+				/*-webkit-border-radius: 10px;
+				border-radius: 10px;*/
+			
+				background-color: #D5CFCF;
+			}
+			
+			.inter-staticitem:hover, .final-staticitem:hover
+			{
+				background-color: #7DFF71;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="search-panel">
+				<input class="search-bar" type="search"/>
+			</div>
+			<div class="inter-result" style="display: block">
+			</div>
+			<div class="final-result">
+			</div>			
+		</div>
+		<script src ="jspopup.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
