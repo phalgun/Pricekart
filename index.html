@@ -9,7 +9,7 @@
 				width: 310px;
 				height: 400px;
 				overflow: auto;
-				overflow-y: none;
+				overflow-x: hidden;
 				/*background-color: #B4C8FF;*/
 			}
 			#search-panel
@@ -45,6 +45,15 @@
 				width: inherit;
 				height: 100px;
 				
+			}
+			
+			.bad 
+			{
+				font-family: ubuntu, sans-serif;
+				font-weight: bold;
+				cursor: pointer;
+				position: relative;
+				left: 20px;
 			}
 			
 						
@@ -88,9 +97,18 @@
 			
 			#search-button {
 
-				background-image: url(search-icon.png);
-				display: none; /* TODO: pnh */
-			}			
+				background-image: url('search-icon.png');
+				display: none;/* TODO: pnh */
+			}	
+			
+			.loading
+			{
+				background-image: url('loading.gif');
+				width: inherit;
+				height: 400px;
+				display: block;
+				background-size: 80%; 
+			}		
 		</style>
 		
 	</head>
@@ -103,6 +121,9 @@
 			<div class="inter-result" style="display: block">
 			</div>
 			<div class="final-result">
+			</div>
+			<div class='loading'>
+				
 			</div>			
 		</div>
 		<script src ="jspopup.js"></script>

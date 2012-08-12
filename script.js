@@ -18,6 +18,7 @@ function processResult(query) {
 			if(response["type"] == "inter") {
 				// Show the similar items
 				var resultList = response["resultList"];
+				$(".loading").css({"display" : "none"});
 				$(".inter-result").html("")
 				for(result in resultList) {
 					var item = resultList[result];
@@ -34,6 +35,7 @@ function processResult(query) {
 						$(".inter-result").css({
 							"display" : "none"
 						});
+						$(".loading").css({"display" : "block"});
 						var item_ = resultList[result];
 						var pname = item_["pname"];
 						var purl = item_["purl"];
@@ -47,6 +49,7 @@ function processResult(query) {
 								if(response_["type"] == "final") {
 									var resultList2 = response_["resultList"];
 									//alert(resultList2);
+									$(".loading").css({"display" : "none"});
 									$(".final-result").html("")
 									for(result2 in resultList2) {
 										var item2 = resultList2[result2];
@@ -75,7 +78,8 @@ function processResult(query) {
 			} else if(response["type"] == "final") {
 				var resultList3 = response["resultList"];
 				//alert(resultList2);
-				$(".final-result").html("")
+				$(".loading").css({"display" : "none"});
+				$(".final-result").html("");
 				for(result4 in resultList3) {
 					var item4 = resultList3[result4];
 					//result = JSON.parse(result);
@@ -95,6 +99,11 @@ function processResult(query) {
 				}
 
 			}
+		}
+		else {
+			$(".loading").css({"display" : "none"});
+			$(".final-result").html("<div class='bad'> Oops .. No results found :( </div>");
+			
 		}
 
 	});
