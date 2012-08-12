@@ -22,7 +22,7 @@ function processResult(query) {
 				for(result in resultList) {
 					var item = resultList[result];
 					//result = JSON.parse(result);
-					$(".inter-result").html($(".inter-result").html() + "<div class='inter-staticitem inter-item" + result + "'>" +"<img src='"+item['pimg']+"'/>"+ item["pname"].toLowerCase() + "</div>");
+					$(".inter-result").html($(".inter-result").html() + "<div class='inter-staticitem inter-item" + result + "'>" +"<img src='"+item['pimg']+"'/><div class='inter-name'>"+ item["pname"].toLowerCase() + "</div></div><hr>");
 
 				}
 
@@ -53,7 +53,7 @@ function processResult(query) {
 										//result = JSON.parse(result);
 										//console.log("-------->url = " + item2["rurl"]);
 										//$(".final-result").html($(".final-result").html() + "<div class='final-staticitem final-item" + result2 + "'><a href='" + item2["rurl"] + "'>" + item2["price"] + "</a></div>");
-										$(".final-result").html($(".final-result").html() + "<div class='final-staticitem final-item" + result2 + "'>" + item2["price"] + " -- " +"<img class='inter-img' src='"+item2['pimg']+"'/>"+"</div>");
+										$(".final-result").html($(".final-result").html() + "<div class='final-staticitem final-item" + result2 + "'><div class='final-name'>" + item2["price"] + " </div>" +"<img class='final-img' src='"+item2['pimg']+"'/>"+"</div><hr>");
 
 									}
 									for(result3 in resultList2) {

@@ -6,8 +6,10 @@
 		<style type="text/css">
 			#wrapper
 			{
-				width: 300px;
+				width: 310px;
 				height: 400px;
+				overflow: auto;
+				overflow-y: none;
 				/*background-color: #B4C8FF;*/
 			}
 			#search-panel
@@ -19,52 +21,76 @@
 			
 			.search-bar
 			{
-				width: inherit;
+				font-family: ubuntu, sans-serif;
+				font-weight: bold;
+				width: 300px;
+				height: 30px;
 			}
 			
-			.inter-staticitem, .final-staticitem
+			.final-staticitem
 			{
-				width: inherit;
+				font-family: ubuntu, sans-serif;
+				font-weight: bold;
 				cursor: pointer;
-				font-family: ubutu, sans-serif;
-				font-weight:bolder;
-				margin: 5px;
+				width: inherit;
 				height: 50px;
-				padding-left: 5px;
-				text-align: left;
-				/*-webkit-border-radius: 10px;
-				border-radius: 10px;*/
-			
-				/*background-color: #D5CFCF;*/
+				
 			}
-
+			
 			.inter-staticitem
 			{
+				font-family: ubuntu, sans-serif;
+				font-weight: bold;
+				cursor: pointer;
+				width: inherit;
 				height: 100px;
-				text-align: right;
-
+				
 			}
 			
+						
+			.final-name
+			{
+				display:block;
+				position: relative;
+				top: 10px;
+				text-align: left;
+				padding-left: 5px; 
+			}
+			
+			.inter-name
+			{
+				display:block;
+				position: relative;
+				top: -65px;
+				text-align: right;
+				padding-right: 5px; 
+			}
+			
+			.final-img
+			{
+				position: relative;
+				left: 100px;
+			}
+			
+			.inter-img
+			{
+				position: relative;
+				right: 100px;
+			}
+						
 			.inter-staticitem:hover, .final-staticitem:hover
 			{
-				color: #2c2c2c;
+				color: #29AA1D;
+				/*outline: 2px solid #29AA1D;
+				outline-offset: 10px; */
+				
 			}
+			
 			#search-button {
 
 				background-image: url(search-icon.png);
-			}
-
-			.inter-img 
-			{
-				
-			}
-
-			.final-img
-			{
-				position: absolute;
-				left: 10px;
-				top: 10px;
-			}
+				display: none; /* TODO: pnh */
+			}			
 		</style>
 		
 	</head>
