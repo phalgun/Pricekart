@@ -24,21 +24,46 @@
 			
 			.inter-staticitem, .final-staticitem
 			{
+				width: inherit;
 				cursor: pointer;
 				font-family: ubutu, sans-serif;
 				font-weight:bolder;
 				margin: 5px;
-				height: 25px;
-				text-align: center;
+				height: 50px;
+				padding-left: 5px;
+				text-align: left;
 				/*-webkit-border-radius: 10px;
 				border-radius: 10px;*/
 			
-				background-color: #D5CFCF;
+				/*background-color: #D5CFCF;*/
+			}
+
+			.inter-staticitem
+			{
+				height: 100px;
+				text-align: right;
+
 			}
 			
 			.inter-staticitem:hover, .final-staticitem:hover
 			{
-				background-color: #7DFF71;
+				color: #2c2c2c;
+			}
+			#search-button {
+
+				background-image: url(search-icon.png);
+			}
+
+			.inter-img 
+			{
+				
+			}
+
+			.final-img
+			{
+				position: absolute;
+				left: 10px;
+				top: 10px;
 			}
 		</style>
 		
@@ -46,7 +71,8 @@
 	<body>
 		<div id="wrapper">
 			<div id="search-panel">
-				<input class="search-bar" type="search"/>
+				<input class="search-bar" type="search"/> <button id="search-button"></button>
+				
 			</div>
 			<div class="inter-result" style="display: block">
 			</div>
