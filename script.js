@@ -22,7 +22,7 @@ function processResult(query) {
 				for(result in resultList) {
 					var item = resultList[result];
 					//result = JSON.parse(result);
-					$(".inter-result").html($(".inter-result").html() + "<div class='inter-staticitem inter-item" + result + "'>" + item["pname"].toLowerCase() + "</div>");
+					$(".inter-result").html($(".inter-result").html() + "<div class='inter-staticitem inter-item" + result + "'>" +"<img src='"+item['pimg']+"'/>"+ item["pname"].toLowerCase() + "</div>");
 
 				}
 
@@ -53,7 +53,7 @@ function processResult(query) {
 										//result = JSON.parse(result);
 										//console.log("-------->url = " + item2["rurl"]);
 										//$(".final-result").html($(".final-result").html() + "<div class='final-staticitem final-item" + result2 + "'><a href='" + item2["rurl"] + "'>" + item2["price"] + "</a></div>");
-										$(".final-result").html($(".final-result").html() + "<div class='final-staticitem final-item" + result2 + "'>" + item2["price"] + " -- " +"<img src='"+item2['pimg']+"'/>"+"</div>");
+										$(".final-result").html($(".final-result").html() + "<div class='final-staticitem final-item" + result2 + "'>" + item2["price"] + " -- " +"<img class='inter-img' src='"+item2['pimg']+"'/>"+"</div>");
 
 									}
 									for(result3 in resultList2) {
@@ -81,7 +81,7 @@ function processResult(query) {
 					//result = JSON.parse(result);
 					//console.log("-------->url = " + item2["rurl"]);
 					//$(".final-result").html($(".final-result").html() + "<div class='final-staticitem final-item" + result2 + "'><a href='" + item2["rurl"] + "'>" + item2["price"] + "</a></div>");
-					$(".final-result").html($(".final-result").html() + "<div class='final-staticitem final-item" + result4 + "'>" + item4["price"] +"<img src='"+item4['pimg']+"'/>" + "</div>");
+					$(".final-result").html($(".final-result").html() + "<div class='final-staticitem final-item" + result4 + "'>" + item4["price"] +"<img class='final-img' src='"+item4['pimg']+"'/>" + "</div>");
 
 				}
 				for(result5 in resultList3) {
@@ -109,14 +109,6 @@ function getQueryTerm() {
 $(document).ready(function() {
 
 	// intialize all event handlers
-	console.log("1");
-	$(".search-bar").keypress(function(e) {
-		if(e.which == 13) {
-			alert('You pressed enter!');
-		} else {
-			alert("not available");
-		}
-	});
 	// fetch the data from searchbar
 	// send request to: http://sleepy-island-9299.herokuapp.com/search/?pname=<search term>&qtype=first
 });
