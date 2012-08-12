@@ -1,8 +1,8 @@
 {
-  "name": "NammaHack",
+  "name": "Pricekart",
   "version": "1.0",
   "manifest_version": 2,
-  "description": "Ecommerce buying made easy!",
+  "description": "Chrome extension which helps you shop easily on e-commerce sites. People usually spend most of their online shopping time comparing prices and delivery times. What if all these were available in one single click ? This chrome extension determines the product you are viewing and shows the prices of the product from other e-commerce sites. And you can easily choose the one of your liking without much hassle.",
   "browser_action": {
     "default_icon": "images.png",
     "default_popup": "index.html"
